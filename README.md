@@ -1,5 +1,5 @@
-# fxserver-esx_clotheshop
-FXServer ESX ClotheShop Modified by Eden-RP
+# fxserver-esx_eden_clotheshop
+FXServer esx_eden_clotheshopp Modified by Eden-RP
 
 [REQUIREMENTS]
 
@@ -10,10 +10,10 @@ FXServer ESX ClotheShop Modified by Eden-RP
 1) CD in your resources/[esx] folder
 2) Clone the repository
 ```
-git clone https://github.com/FXServer-ESX/fxserver-esx_clotheshop clotheshop
+git clone https://github.com/ShadowsX2V2/esx_eden_clotheshop clotheshop
 ```
 3) Add this in your server.cfg :
 
 ```
-start esx_clotheshop
+start esx_eden_clotheshop
 ```
