@@ -1,5 +1,5 @@
 # fxserver-esx_eden_clotheshop
-FXServer esx_eden_clotheshopp Modified by Eden-RP
+FXServer esx_eden_clotheshop Modified by Eden-RP
 
 [REQUIREMENTS]
 
