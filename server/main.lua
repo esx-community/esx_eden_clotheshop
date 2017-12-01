@@ -2,8 +2,8 @@ ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
-RegisterServerEvent('esx_clotheshop:pay')
-AddEventHandler('esx_clotheshop:pay', function()
+RegisterServerEvent('esx_eden_clotheshop:pay')
+AddEventHandler('esx_eden_clotheshop:pay', function()
 
 	local xPlayer = ESX.GetPlayerFromId(source)
 
@@ -13,8 +13,8 @@ AddEventHandler('esx_clotheshop:pay', function()
 
 end)
 
-RegisterServerEvent('esx_clotheshop:saveOutfit')
-AddEventHandler('esx_clotheshop:saveOutfit', function(label, skin)
+RegisterServerEvent('esx_eden_clotheshop:saveOutfit')
+AddEventHandler('esx_eden_clotheshop:saveOutfit', function(label, skin)
 
 	local xPlayer = ESX.GetPlayerFromId(source)
 
@@ -37,8 +37,8 @@ AddEventHandler('esx_clotheshop:saveOutfit', function(label, skin)
 
 end)
 
-RegisterServerEvent('esx_clotheshop:deleteOutfit')
-AddEventHandler('esx_clotheshop:deleteOutfit', function(label)
+RegisterServerEvent('esx_eden_clotheshop:deleteOutfit')
+AddEventHandler('esx_eden_clotheshop:deleteOutfit', function(label)
 
 	local xPlayer = ESX.GetPlayerFromId(source)
 
@@ -60,7 +60,7 @@ AddEventHandler('esx_clotheshop:deleteOutfit', function(label)
 
 end)
 
-ESX.RegisterServerCallback('esx_clotheshop:checkMoney', function(source, cb)
+ESX.RegisterServerCallback('esx_eden_clotheshop:checkMoney', function(source, cb)
 
 	local xPlayer = ESX.GetPlayerFromId(source)
 
@@ -72,7 +72,7 @@ ESX.RegisterServerCallback('esx_clotheshop:checkMoney', function(source, cb)
 
 end)
 
-ESX.RegisterServerCallback('esx_clotheshop:checkPropertyDataStore', function(source, cb)
+ESX.RegisterServerCallback('esx_eden_clotheshop:checkPropertyDataStore', function(source, cb)
 
 	local xPlayer    = ESX.GetPlayerFromId(source)
 	local foundStore = false
@@ -85,7 +85,7 @@ ESX.RegisterServerCallback('esx_clotheshop:checkPropertyDataStore', function(sou
 
 end)
 
-ESX.RegisterServerCallback('esx_clotheshop:getPlayerDressing', function(source, cb)
+ESX.RegisterServerCallback('esx_eden_clotheshop:getPlayerDressing', function(source, cb)
 
   local xPlayer  = ESX.GetPlayerFromId(source)
 
@@ -105,7 +105,7 @@ ESX.RegisterServerCallback('esx_clotheshop:getPlayerDressing', function(source, 
 
 end)
 
-ESX.RegisterServerCallback('esx_clotheshop:getPlayerOutfit', function(source, cb, num)
+ESX.RegisterServerCallback('esx_eden_clotheshop:getPlayerOutfit', function(source, cb, num)
 
   local xPlayer  = ESX.GetPlayerFromId(source)
 

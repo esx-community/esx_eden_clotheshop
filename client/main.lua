@@ -73,7 +73,7 @@ function OpenShopMenu()
 
 				if data.current.value == 'yes' then
 
-					ESX.TriggerServerCallback('esx_clotheshop:checkMoney', function(hasEnoughMoney)
+					ESX.TriggerServerCallback('esx_eden_clotheshop:checkMoney', function(hasEnoughMoney)
 
 						if hasEnoughMoney then
 
@@ -81,11 +81,11 @@ function OpenShopMenu()
 								TriggerServerEvent('esx_skin:save', skin)
 							end)
 
-							TriggerServerEvent('esx_clotheshop:pay')
+							TriggerServerEvent('esx_eden_clotheshop:pay')
 
 							HasPayed = true
 
-							ESX.TriggerServerCallback('esx_clotheshop:checkPropertyDataStore', function(foundStore)
+							ESX.TriggerServerCallback('esx_eden_clotheshop:checkPropertyDataStore', function(foundStore)
 
 								if foundStore then
 
@@ -115,7 +115,7 @@ function OpenShopMenu()
 														menu3.close()
 
 														TriggerEvent('skinchanger:getSkin', function(skin)
-															TriggerServerEvent('esx_clotheshop:saveOutfit', data3.value, skin)
+															TriggerServerEvent('esx_eden_clotheshop:saveOutfit', data3.value, skin)
 														end)
 
 														ESX.ShowNotification(_U('saved_outfit'))
@@ -201,12 +201,13 @@ function OpenShopMenu()
 		'glasses_2',
 		'bags_1',
 		'bags_2',
+		
 	})
       end
 
       if data.current.value == 'player_dressing' then
 		
-        ESX.TriggerServerCallback('esx_clotheshop:getPlayerDressing', function(dressing)
+        ESX.TriggerServerCallback('esx_eden_clotheshop:getPlayerDressing', function(dressing)
 
           local elements = {}
 
@@ -225,7 +226,7 @@ function OpenShopMenu()
 
               TriggerEvent('skinchanger:getSkin', function(skin)
 
-                ESX.TriggerServerCallback('esx_clotheshop:getPlayerOutfit', function(clothes)
+                ESX.TriggerServerCallback('esx_eden_clotheshop:getPlayerOutfit', function(clothes)
 
                   TriggerEvent('skinchanger:loadClothes', skin, clothes)
                   TriggerEvent('esx_skin:setLastSkin', skin)
@@ -256,7 +257,7 @@ function OpenShopMenu()
       end
 	  
 	  if data.current.value == 'suppr_cloth' then
-		ESX.TriggerServerCallback('esx_clotheshop:getPlayerDressing', function(dressing)
+		ESX.TriggerServerCallback('esx_eden_clotheshop:getPlayerDressing', function(dressing)
 			local elements = {}
 
 			for i=1, #dressing, 1 do
@@ -272,7 +273,7 @@ function OpenShopMenu()
             },
             function(data, menu)
 			menu.close()
-				TriggerServerEvent('esx_clotheshop:deleteOutfit', data.current.value)
+				TriggerServerEvent('esx_eden_clotheshop:deleteOutfit', data.current.value)
 				  
 				ESX.ShowNotification(_U('supprimed_cloth'))
 
@@ -301,13 +302,13 @@ function OpenShopMenu()
 
 end
 
-AddEventHandler('esx_clotheshop:hasEnteredMarker', function(zone)
+AddEventHandler('esx_eden_clotheshop:hasEnteredMarker', function(zone)
 	CurrentAction     = 'shop_menu'
 	CurrentActionMsg  = _U('press_menu')
 	CurrentActionData = {}
 end)
 
-AddEventHandler('esx_clotheshop:hasExitedMarker', function(zone)
+AddEventHandler('esx_eden_clotheshop:hasExitedMarker', function(zone)
 	
 	ESX.UI.Menu.CloseAll()
 	CurrentAction = nil
@@ -381,12 +382,12 @@ Citizen.CreateThread(function()
 		if (isInMarker and not HasAlreadyEnteredMarker) or (isInMarker and LastZone ~= currentZone) then
 			HasAlreadyEnteredMarker = true
 			LastZone                = currentZone
-			TriggerEvent('esx_clotheshop:hasEnteredMarker', currentZone)
+			TriggerEvent('esx_eden_clotheshop:hasEnteredMarker', currentZone)
 		end
 
 		if not isInMarker and HasAlreadyEnteredMarker then
 			HasAlreadyEnteredMarker = false
-			TriggerEvent('esx_clotheshop:hasExitedMarker', LastZone)
+			TriggerEvent('esx_eden_clotheshop:hasExitedMarker', LastZone)
 		end
 
 	end
