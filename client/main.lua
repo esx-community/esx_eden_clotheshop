@@ -63,7 +63,7 @@ function OpenShopMenu()
 				title = _U('valid_this_purchase'),
 				align = 'top-left',
 				elements = {
-					{label = _U('yes'), value = 'yes'},
+					{label = _U('yes_valid_purchase', ESX.Math.GroupDigits(Config.Price)), value = 'yes'},
 					{label = _U('no'), value = 'no'},
 				}
 			},
