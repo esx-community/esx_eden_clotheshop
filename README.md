@@ -1,11 +1,11 @@
-# fxserver-esx_eden_clotheshop
-FXServer ESX ClotheShop Modified by Eden-RP
+# esx_eden_clotheshop
+ESX ClotheShop Modified by Eden-RP
 
 If you have any comment or suggested PM me on discord : Solaris#6632
 
 [REQUIREMENTS]
 
-- esx_skin => https://github.com/FXServer-ESX/fxserver-esx_skin
+- esx_skin => https://github.com/ESX-Org/esx_skin
 
 [INSTALLATION]
 
@@ -25,4 +25,3 @@ start esx_eden_clotheshop
 -- EN : https://img15.hostingpics.net/pics/348886Capturedcran20171202005329.png
 
 -- FR : https://img15.hostingpics.net/pics/499448Capturedcran20171130214439.png
-
