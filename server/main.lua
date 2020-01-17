@@ -4,22 +4,18 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 RegisterServerEvent('esx_eden_clotheshop:pay')
 AddEventHandler('esx_eden_clotheshop:pay', function()
-
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	xPlayer.removeMoney(Config.Price)
 
 	TriggerClientEvent('esx:showNotification', source, _U('you_paid') .. Config.Price)
-
 end)
 
 RegisterServerEvent('esx_eden_clotheshop:saveOutfit')
 AddEventHandler('esx_eden_clotheshop:saveOutfit', function(label, skin)
-
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	TriggerEvent('esx_datastore:getDataStore', 'property', xPlayer.identifier, function(store)
-
 		local dressing = store.get('dressing')
 
 		if dressing == nil then
@@ -32,18 +28,14 @@ AddEventHandler('esx_eden_clotheshop:saveOutfit', function(label, skin)
 		})
 
 		store.set('dressing', dressing)
-
 	end)
-
 end)
 
 RegisterServerEvent('esx_eden_clotheshop:deleteOutfit')
 AddEventHandler('esx_eden_clotheshop:deleteOutfit', function(label)
-
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	TriggerEvent('esx_datastore:getDataStore', 'property', xPlayer.identifier, function(store)
-
 		local dressing = store.get('dressing')
 
 		if dressing == nil then
@@ -55,13 +47,10 @@ AddEventHandler('esx_eden_clotheshop:deleteOutfit', function(label)
 		table.remove(dressing, label)
 
 		store.set('dressing', dressing)
-
 	end)
-
 end)
 
 ESX.RegisterServerCallback('esx_eden_clotheshop:checkMoney', function(source, cb)
-
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if xPlayer.get('money') >= Config.Price then
@@ -69,11 +58,9 @@ ESX.RegisterServerCallback('esx_eden_clotheshop:checkMoney', function(source, cb
 	else
 		cb(false)
 	end
-
 end)
 
 ESX.RegisterServerCallback('esx_eden_clotheshop:checkPropertyDataStore', function(source, cb)
-
 	local xPlayer    = ESX.GetPlayerFromId(source)
 	local foundStore = false
 
@@ -82,15 +69,12 @@ ESX.RegisterServerCallback('esx_eden_clotheshop:checkPropertyDataStore', functio
 	end)
 
 	cb(foundStore)
-
 end)
 
 ESX.RegisterServerCallback('esx_eden_clotheshop:getPlayerDressing', function(source, cb)
-
   local xPlayer  = ESX.GetPlayerFromId(source)
 
   TriggerEvent('esx_datastore:getDataStore', 'property', xPlayer.identifier, function(store)
-
     local count    = store.count('dressing')
     local labels   = {}
 
@@ -100,18 +84,14 @@ ESX.RegisterServerCallback('esx_eden_clotheshop:getPlayerDressing', function(sou
     end
 
     cb(labels)
-
   end)
-
 end)
 
 ESX.RegisterServerCallback('esx_eden_clotheshop:getPlayerOutfit', function(source, cb, num)
-
   local xPlayer  = ESX.GetPlayerFromId(source)
 
   TriggerEvent('esx_datastore:getDataStore', 'property', xPlayer.identifier, function(store)
     local outfit = store.get('dressing', num)
     cb(outfit.skin)
   end)
-
 end)
