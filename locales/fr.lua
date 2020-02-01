@@ -1,6 +1,6 @@
 Locales['fr'] = {
-
 	['valid_this_purchase'] = 'valider cet achat ?',
+  	['yes_valid_purchase'] = 'oui (<span style="color: green;">$%s</span>)',
 	['yes'] = 'oui',
 	['no'] = 'non',
 	['name_outfit'] = 'nom de la tenue ?',
@@ -16,5 +16,4 @@ Locales['fr'] = {
 	['loaded_outfit'] = 'vous avez bien récupéré la tenue de votre garde robe. Merci de votre visite !',
 	['suppr_cloth'] = 'supprimer tenue - garde robe',
 	['supprimed_cloth'] = 'cette tenue a bien été supprimé de votre garde robe'
-
 }
